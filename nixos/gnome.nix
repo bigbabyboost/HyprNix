@@ -20,7 +20,6 @@
       displayManager = {
         gdm.enable = true;
         autoLogin.enable = false;
-        sessionPackages = [ pkgs.hyprland ];
       };
     };
   };

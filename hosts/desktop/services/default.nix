@@ -3,7 +3,7 @@
 
 let
   hhkbCommand = ''
-    sudo /home/enzo/Downloads/evremap/target/release/evremap remap /home/enzo/Downloads/evremap/hhkb.toml
+    sudo /home/nekox/Downloads/evremap/target/release/evremap remap /home/nekox/Downloads/evremap/hhkb.toml
   '';
 
 in
@@ -12,6 +12,6 @@ in
     description = "HHKB Service";
     serviceConfig.ExecStart = hhkbCommand;
     wantedBy = [ "multi-user.target" ];
-    user = "enzo";
+    user = "nekox";
   };
 }

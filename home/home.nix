@@ -9,39 +9,39 @@
   ];
 
   home = {
-    username = "enzo";
-    homeDirectory = "/home/enzo";
+    username = "nekox";
+    homeDirectory = "/home/nekox";
   };
 
   home.packages = (with pkgs; [
     
     #User Apps
-    celluloid
-    discord
-    librewolf
+    #celluloid
+    #discord
+    #librewolf
     cool-retro-term
     bibata-cursors
-    vscode
-    lollypop
-    lutris
-    openrgb
-    betterdiscord-installer
+    #vscode
+    #lollypop
+    #lutris
+    #openrgb
+    #betterdiscord-installer
     
 
     #utils
     ranger
     wlr-randr
-    git
-    gnumake
-    catimg
+    #git
+    #gnumake
+    #catimg
     curl
-    appimage-run
+    #appimage-run
     xflux
     dunst
     pavucontrol
 
     #misc 
-    cava
+    #cava
     neovim
     nano
     rofi
@@ -65,6 +65,7 @@
   ]);
 
   programs.home-manager.enable = true;
+  programs.git.enable = true;
 
   home.stateVersion = "23.05";
 }

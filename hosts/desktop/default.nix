@@ -2,22 +2,21 @@
 {
   imports = [
     ./fonts
-    ./virtualisation
-    ./services
+    #./virtualisation
   ];
 
-  programs.regreet.enable = true;
+  programs.regreet.enable = false;
   services.greetd = {
-    enable = true;
+    enable = false;
     settings = {
       initial_session = {
-        user = "enzo";
+        user = "nekox";
         command = "$SHELL -l";
       };
     };
   };
 
-programs = {
+  programs = {
     bash = {
       interactiveShellInit = ''
         if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then

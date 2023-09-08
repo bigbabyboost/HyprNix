@@ -8,6 +8,9 @@
   home.packages = with pkgs; [ 
     waybar
     swww
+    wofi
+    kitty
+    swaybg
   ];
   
   #test later systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
@@ -18,7 +21,8 @@
     extraConfig = ''
 
     # Monitor
-    monitor=DP-1,1920x1080@165,auto,1
+    monitor=eDP-1,1366x768,auto,1
+    monitor=DP-1,1366x768,auto,1
 
     # Fix slow startup
     exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
@@ -29,16 +33,16 @@
     exec-once = hyprctl setcursor Bibata-Modern-Classic 24
     exec-once = dunst
 
-    source = /home/enzo/.config/hypr/colors
+    source = /home/nekox/.config/hypr/colors
     exec = pkill waybar & sleep 0.5 && waybar
     exec-once = swww init
-    exec = swww img /home/enzo/Imagens/wallpapers/menhera.jpg
+    exec = swaybg -i /home/nekox/Imagens/wallpapers/menhera.jpg
 
     # Set en layout at startup
 
     # Input config
     input {
-        kb_layout = br,us
+        kb_layout = us
         kb_variant =
         kb_model =
         kb_options =
@@ -108,18 +112,18 @@
     # Example windowrule v2
     # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
 
-    windowrule=float,^(kitty)$
+    #windowrule=float,^(kitty)$
     windowrule=float,^(pavucontrol)$
     windowrule=center,^(kitty)$
     windowrule=float,^(blueman-manager)$
-    windowrule=size 1040 670,^(kitty)$
+    windowrule=size 934 525,^(firefox)$
     windowrule=size 934 525,^(mpv)$
     windowrule=float,^(mpv)$
     windowrule=center,^(mpv)$
     #windowrule=pin,^(firefox)$
 
     $mainMod = SUPER
-    bind = $mainMod, G, fullscreen,
+    bind = $mainMod, F, fullscreen,
 
 
     #bind = $mainMod, RETURN, exec, cool-retro-term-zsh
@@ -128,9 +132,9 @@
     bind = $mainMod, L, exec, librewolf
     bind = $mainMod, Q, killactive,
     bind = $mainMod, M, exit,
-    bind = $mainMod, F, exec, nautilus
+    bind = $mainMod, N, exec, nautilus
     bind = $mainMod, V, togglefloating,
-    bind = $mainMod, w, exec, wofi --show drun
+    bind = $mainMod, W, exec, wofi --show drun
     bind = $mainMod, R, exec, rofiWindow
     bind = $mainMod, P, pseudo, # dwindle
     bind = $mainMod, J, togglesplit, # dwindle
