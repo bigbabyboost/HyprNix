@@ -10,7 +10,7 @@
       style = ''
                * {
                  font-family: "JetBrainsMono Nerd Font";
-                 font-size: 12pt;
+                 font-size: 10pt;
                  font-weight: bold;
                  border-radius: 8px;
                  transition-property: background-color;
@@ -159,7 +159,7 @@
         ];
         "custom/launcher" = {
           "format" = " ";
-          "on-click" = "pkill rofi || rofi2";
+          "on-click" = "pkill rofi || rofiWindow";
           "on-click-middle" = "exec default_wall";
           "on-click-right" = "exec wallpaper_random";
           "tooltip" = false;

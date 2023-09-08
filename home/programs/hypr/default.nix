@@ -7,7 +7,7 @@
 
   home.packages = with pkgs; [ 
     waybar
-    swww
+    # swww
     wofi
     kitty
     swaybg
@@ -30,7 +30,7 @@
 
     # Autostart
 
-    exec-once = hyprctl setcursor Bibata-Modern-Classic 24
+    exec-once = hyprctl setcursor Bibata-Modern-Classic 20
     exec-once = dunst
 
     source = /home/nekox/.config/hypr/colors
@@ -60,7 +60,7 @@
     general {
 
         gaps_in = 5
-        gaps_out = 20
+        gaps_out = 10
         border_size = 2
         col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
         col.inactive_border = rgba(595959aa)
