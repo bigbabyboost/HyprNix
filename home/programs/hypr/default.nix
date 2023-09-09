@@ -11,6 +11,8 @@
     wofi
     kitty
     swaybg
+    wezterm
+    swaylock
   ];
   
   #test later systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
@@ -112,12 +114,13 @@
     # Example windowrule v2
     # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
 
-    #windowrule=float,^(kitty)$
+    windowrule=float,^(kitty)$
     windowrule=float,^(pavucontrol)$
     windowrule=center,^(kitty)$
     windowrule=float,^(blueman-manager)$
     windowrule=size 934 525,^(firefox)$
     windowrule=size 934 525,^(mpv)$
+    windowrule=size 500 500,^(kitty)$
     windowrule=float,^(mpv)$
     windowrule=center,^(mpv)$
     #windowrule=pin,^(firefox)$
@@ -127,7 +130,7 @@
 
 
     #bind = $mainMod, RETURN, exec, cool-retro-term-zsh
-    bind = $mainMod, RETURN, exec, kitty
+    bind = $mainMod, RETURN, exec, wezterm
     bind = $mainMod, B, exec, opera --no-sandbox
     bind = $mainMod, L, exec, librewolf
     bind = $mainMod, Q, killactive,

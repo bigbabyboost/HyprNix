@@ -216,7 +216,7 @@
           "format-wifi" = "󰖩 {essid}";
           "interval" = 1;
           "tooltip" = false;
-          "on-click" = "kitty -o initial_window_width=500 -o initial_window_height=500 nmtui";
+          "on-click" = "kitty -o inital_window_width=500 -o initial_window_height=500 nmtui";
         };
         "custom/powermenu" = {
           "format" = "";
