@@ -84,7 +84,7 @@
    ];
    NIXPKGS_ALLOW_UNFREE = "1";
   };
-  
+  users.defaultUserShell = pkgs.zsh;
   users.users.nekox = {
     isNormalUser = true;
     description = "Nekox";
