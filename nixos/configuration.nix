@@ -56,6 +56,7 @@
     driSupport = true;
     driSupport32Bit = true;
   };
+  programs.nm-applet.enable = true;
   programs.light.enable = true;
   programs.steam = {
    enable = false;
@@ -94,6 +95,7 @@
       (opera.override { proprietaryCodecs = true; })
       neofetch
       lolcat
+      networkmanagerapplet
    ];
   };
 

@@ -6,6 +6,11 @@
     theme = ./theme.rasi;
   };
 
+    home.file.".config/rofi/powermenu".source = ./powermenu;
+    home.file.".config/rofi/config/colors.rasi".source = ./config/colors.rasi;
+    home.file.".config/rofi/config/confirm.rasi".source = ./config/confirm.rasi;
+    home.file.".config/rofi/config/font.rasi".source = ./config/font.rasi;
+    home.file.".config/rofi/config/powermenu.rasi".source = ./config/powermenu.rasi;
     home.file.".config/rofi/theme.rasi".text = ''
 
 /*****----- Configuration -----*****/

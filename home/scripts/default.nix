@@ -8,7 +8,7 @@ let
     cool-retro-term -e zsh
   '';
     rofi1 = pkgs.writeShellScriptBin "rofi1" ''
-    ~/.config/rofi/launchers/type-1/launcher.sh
+    ~/.config/rofi/powermenu
   '';
     rofi2 = pkgs.writeShellScriptBin "rofi2" ''
     ~/.config/rofi/launchers/type-2/launcher.sh

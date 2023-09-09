@@ -216,10 +216,11 @@
           "format-wifi" = "󰖩 {essid}";
           "interval" = 1;
           "tooltip" = false;
+          "on-click" = "kitty -o initial_window_width=500 -o initial_window_height=500 nmtui";
         };
         "custom/powermenu" = {
           "format" = "";
-          "on-click" = "pkill rofi || ~/.config/rofi/powermenu/type-3/powermenu.sh";
+          "on-click" = "pkill rofi || rofi1";
           "tooltip" = false;
         };
         "tray" = {
