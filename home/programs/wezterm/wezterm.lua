@@ -20,7 +20,7 @@ return {
     },
   },
   
-  font_size = 18.0,
+  font_size = 9.0,
   
   color_scheme = "Catppuccin",
  

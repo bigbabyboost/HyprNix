@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ../hosts/desktop
+      ../module/system/default.nix
       #./gnome.nix
     ];
 
