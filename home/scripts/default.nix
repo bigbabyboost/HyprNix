@@ -7,16 +7,13 @@ let
   cool-retro-term-zsh = pkgs.writeShellScriptBin "cool-retro-term-zsh" ''
     cool-retro-term -e zsh
   '';
-    rofi1 = pkgs.writeShellScriptBin "rofi1" ''
+  rofi1 = pkgs.writeShellScriptBin "rofi1" ''
     ~/.config/rofi/powermenu
   '';
-    rofi2 = pkgs.writeShellScriptBin "rofi2" ''
-    ~/.config/rofi/launchers/type-2/launcher.sh
-  '';
-    rofiWindow = pkgs.writeShellScriptBin "rofiWindow" ''
-#!/usr/bin/env bash
-## Run
-rofi \
+  rofiWindow = pkgs.writeShellScriptBin "rofiWindow" ''
+  #!/usr/bin/env bash
+  ## Run
+  rofi \
     -show drun \
     -theme "$HOME/.config/rofi/theme.rasi"
   '';
@@ -31,15 +28,42 @@ rofi \
           swww img ~/Imagens/wallpapers/menhera.jpg  --transition-type simple
     fi
   '';
+  volume = let
+    pamixer = lib.getExe pkgs.pamixer;
+    dunstify = pkgs.dunst + "/bin/dunstify";
+  in
+    pkgs.writeShellScriptBin "volume" ''
+      #!/bin/sh
+
+      ${pamixer} "$@"
+
+      volume="$(${pamixer} --get-volume-human)"
+
+      if [ "$volume" = "muted" ]; then
+          ${dunstify} -r 69 \
+              -a "Volume" \
+              "Muted" \
+              -i ${./mute.svg} \
+              -t 888 \
+              -u low
+      else
+          ${dunstify} -r 69 \
+              -a "Volume" "Currently at $volume" \
+              -h int:value:"$volume" \
+              -i ${./volume.svg} \
+              -t 888 \
+              -u low
+      fi
+    '';
 in
 {
   home.packages = with pkgs; [
     cool-retro-term-zsh
     rofi1
-    rofi2
     rofiWindow
     cava-internal
     wallpaper_random
     default_wall
+    volume
   ];
 }

@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
+    home.file.".config/waybar/scripts/wifimenu.sh".source = ./scripts/wifimenu.sh;
     programs.waybar = {
       enable = true;
       systemd = {
@@ -216,7 +217,7 @@
           "format-wifi" = "󰖩 {essid}";
           "interval" = 1;
           "tooltip" = false;
-          "on-click" = "kitty nmtui";
+          "on-click"= "bash ~/.config/waybar/scripts/wifimenu.sh";
         };
         "custom/powermenu" = {
           "format" = "";
