@@ -66,6 +66,8 @@
   # Configure console keymap
   console.keyMap = "us";
 
+  services.gvfs.enable = true; 
+
   sound.enable = false;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
